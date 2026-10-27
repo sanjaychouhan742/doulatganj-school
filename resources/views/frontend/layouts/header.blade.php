@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
       @hasSection('title')
-          @yield('title') Admin-Daulatganj School
+          @yield('title') दौलतगंज विद्यालय
       @else
-          Daulatganj School
+          हमारे विद्यालय के बारे में | दौलतगंज विद्यालय
       @endif
   </title>
 
@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
   <!-- Css Styles -->
-  <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}" type="text/css">
+  {{-- <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}" type="text/css"> --}}
   {{-- <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('frontend/css/elegant-icons.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('frontend/css/flaticon.css') }}" type="text/css">
@@ -33,8 +33,8 @@
   <link rel="stylesheet" href="{{ asset('frontend/css/magnific-popup.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css') }}" type="text/css"> --}}
   <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" type="text/css">
-  <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet"
-      type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

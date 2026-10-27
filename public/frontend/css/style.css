@@ -1720,75 +1720,132 @@ footer {
 }
 
 
-/* ---------- Main Container ---------- */
+/* =========================================
+   ATTENDANCE FILTER SECTION
+========================================= */
 
-.attendance-container {
-    max-width: 1250px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-
-/* ---------- Filter ---------- */
-
-.filter-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
+.attendance-container .filter-card {
+    width: 100%;
     display: flex;
-    align-items: end;
-    gap: 18px;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding: 22px;
+    margin-bottom: 25px;
+    background: #ffffff;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.filter-group {
-    width: 200px;
+.attendance-container .filter-group {
+    flex: 0 1 220px;
+    min-width: 0;
+    width: auto;
 }
 
-.filter-group label {
+.attendance-container .filter-group label {
     display: block;
-    margin-bottom: 7px;
-    font-size: 13px;
+    margin-bottom: 8px;
+    color: #344054;
+    font-size: 14px;
     font-weight: 600;
 }
 
-.filter-group select {
+.attendance-container .filter-group select {
+    display: block;
     width: 100%;
-    padding: 11px 12px;
+    min-width: 0;
+    height: 44px;
+    padding: 0 12px;
     border: 1px solid #dbe2ea;
     border-radius: 7px;
-    background: #fff;
-    outline: none;
+    background: #ffffff;
+    color: #243447;
+    font-family: inherit;
     font-size: 14px;
+    outline: none;
+    cursor: pointer;
 }
 
-.filter-group select:focus {
+.attendance-container .filter-group select:focus {
     border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
 }
 
 
-/* ---------- Search ---------- */
+/* Search Box */
 
-.search-box {
-    flex: 1;
-    height: 42px;
-    border: 1px solid #dbe2ea;
-    border-radius: 7px;
+.attendance-container .search-box {
+    flex: 1 1 260px;
     display: flex;
     align-items: center;
+    min-width: 0;
+    height: 44px;
     padding: 0 12px;
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+    background: #ffffff;
 }
 
-.search-box span {
+.attendance-container .search-box span {
+    flex-shrink: 0;
     color: #64748b;
+    font-size: 22px;
 }
 
-.search-box input {
+.attendance-container .search-box input {
+    flex: 1;
     width: 100%;
-    border: 0;
+    min-width: 0;
+    height: 100%;
+    padding: 0 0 0 10px;
+    border: none;
     outline: none;
-    padding-left: 10px;
+    background: transparent;
+    color: #243447;
+    font-family: inherit;
     font-size: 14px;
+}
+
+.attendance-container .search-box:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* Laptop / Tablet */
+
+@media (max-width: 1024px) {
+    .attendance-container .filter-card {
+        flex-wrap: wrap;
+    }
+    .attendance-container .filter-group {
+        flex: 1 1 200px;
+    }
+    .attendance-container .search-box {
+        flex: 1 1 250px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .attendance-container {
+        padding: 0 15px;
+    }
+    .attendance-container .filter-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 18px;
+    }
+    .attendance-container .filter-group,
+    .attendance-container .search-box {
+        flex: none;
+        width: 100%;
+    }
 }
 
 
@@ -5128,5 +5185,470 @@ a:focus {
     .menu-dropdown {
         right: 3%;
         width: 270px;
+    }
+}
+
+
+/* About us page css */
+
+.about-school-section {
+    padding: 65px 5%;
+    background: #fff;
+}
+
+.about-school-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 42px;
+}
+
+.about-school-image {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.about-school-image img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+}
+
+.about-eyebrow {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: #0d6efd;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.about-school-content h2,
+.about-section-heading h2 {
+    margin: 0 0 18px;
+    color: #183153;
+    font-size: 30px;
+    line-height: 1.4;
+}
+
+.about-school-content p {
+    margin: 0 0 14px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.about-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 11px 20px;
+    border-radius: 5px;
+    border: 2px solid #fbbf24;
+    color: #fbbf24;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.about-read-more:hover {
+    background: #fbbf24;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.about-values-section,
+.faculty-section {
+    padding: 60px 5%;
+    background: #f5f8fc;
+}
+
+.faculty-section {
+    background: #fff;
+}
+
+.about-section-heading {
+    max-width: 760px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.about-section-heading h2 {
+    margin-bottom: 10px;
+}
+
+.about-section-heading>p {
+    margin: 0;
+    color: #667085;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-value-card {
+    padding: 30px 24px;
+    background: #fff;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(22, 44, 74, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-value-card:hover,
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 26px rgba(22, 44, 74, 0.12);
+}
+
+.about-value-card>.material-symbols-outlined {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: #eaf2ff;
+    color: #0d6efd;
+    font-size: 28px;
+}
+
+.about-value-card h3 {
+    margin: 0 0 12px;
+    color: #183153;
+    font-size: 20px;
+}
+
+.about-value-card p {
+    margin: 0;
+    color: #606b7a;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faculty-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(22, 44, 74, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faculty-image-box {
+    height: 245px;
+    overflow: hidden;
+    background: #edf2f8;
+}
+
+.faculty-image-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.35s ease;
+}
+
+.faculty-card:hover .faculty-image-box img {
+    transform: scale(1.04);
+}
+
+.faculty-card-content {
+    padding: 20px 16px 22px;
+    text-align: center;
+}
+
+.faculty-role {
+    display: inline-block;
+    margin-bottom: 9px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #eaf2ff;
+    color: #0d6efd;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.faculty-card-content h3 {
+    margin: 0 0 7px;
+    color: #183153;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.faculty-card-content p {
+    margin: 0;
+    color: #687385;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.faculty-note {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    color: #687385;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    .about-school-container {
+        gap: 28px;
+    }
+    .about-school-image img {
+        height: 350px;
+    }
+    .faculty-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .about-school-section,
+    .about-values-section,
+    .faculty-section {
+        padding: 42px 5%;
+    }
+    .about-school-container {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+    .about-school-image img {
+        height: 280px;
+    }
+    .about-school-content h2,
+    .about-section-heading h2 {
+        font-size: 25px;
+    }
+    .about-values-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .faculty-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+    .faculty-image-box {
+        height: 210px;
+    }
+    .faculty-card-content {
+        padding: 16px 10px 18px;
+    }
+    .faculty-card-content h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 420px) {
+    .about-school-section,
+    .about-values-section,
+    .faculty-section {
+        padding: 32px 4%;
+    }
+    .about-school-image img {
+        height: 220px;
+    }
+    .about-school-content h2,
+    .about-section-heading h2 {
+        font-size: 22px;
+    }
+    .about-school-content p {
+        font-size: 15px;
+    }
+    .faculty-grid {
+        gap: 12px;
+    }
+    .faculty-image-box {
+        height: 165px;
+    }
+    .faculty-card-content h3 {
+        font-size: 14px;
+    }
+    .faculty-card-content p {
+        font-size: 12px;
+    }
+    .faculty-role {
+        padding: 4px 7px;
+        font-size: 10px;
+    }
+}
+
+
+/* ===================================
+   ATTENDANCE FILTER SECTION
+=================================== */
+
+.attendance-filter-card {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+    padding: 24px;
+    margin: 30px 0;
+    background: #ffffff;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.attendance-filter-card .filter-group {
+    flex: 0 1 220px;
+    min-width: 0;
+    width: auto;
+}
+
+.attendance-filter-card .filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #344054;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Dropdown */
+
+.attendance-filter-card .filter-group select.form-select {
+    display: block;
+    width: 100%;
+    height: 44px;
+    padding: 8px 36px 8px 12px;
+    color: #243447;
+    background-color: #ffffff;
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 14px;
+    box-shadow: none;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.attendance-filter-card .filter-group select.form-select:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Search Box */
+
+.attendance-filter-card .search-box {
+    display: flex;
+    flex: 1 1 300px;
+    align-items: stretch;
+    min-width: 0;
+    height: 44px;
+    padding: 0;
+    background: #ffffff;
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.attendance-filter-card .search-box:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.attendance-filter-card .search-box .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    color: #64748b;
+    background: #ffffff;
+    border: none;
+}
+
+.attendance-filter-card .search-box .form-control {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    height: 42px;
+    padding: 0 12px 0 0;
+    color: #243447;
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.attendance-filter-card .search-box .form-control:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.attendance-filter-card .search-box .form-control::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    .attendance-filter-card {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .attendance-filter-card .filter-group {
+        flex: 1 1 200px;
+    }
+    .attendance-filter-card .search-box {
+        flex: 1 1 260px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .attendance-filter-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 18px;
+    }
+    .attendance-filter-card .filter-group,
+    .attendance-filter-card .search-box {
+        flex: none;
+        width: 100%;
     }
 }

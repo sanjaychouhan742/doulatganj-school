@@ -1,81 +1,95 @@
 console.log("School script.js successfully loaded!");
-let slider = document.querySelector('.slider');
-let slides = document.querySelectorAll('.slide');
-let nextBtn = document.querySelector('.next-btn');
-let preBtn = document.querySelector('.pre-btn');
-let totalSides = slides.length;
-let sliderInterval;
 
-let currentIndex = 0;
+/* ================= SLIDER ================= */
 
-showPaginationBtn();
-updateSlide();
-startSlide();
-setupPaginationEvents();
-setupSliderHoverEvents();
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.next-btn');
+const preBtn = document.querySelector('.pre-btn');
+const paginationContainer = document.querySelector('.pagination-btns');
 
-function showSlide() {
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+if (slider && slides.length > 0 && paginationContainer) {
+    let currentIndex = 0;
+    let sliderInterval = null;
 
-function updateSlide() {
-    showSlide();
-    setPaginationBrColor();
-}
+    paginationContainer.innerHTML = '';
 
-nextBtn.addEventListener('click', () => {
-    (currentIndex < totalSides - 1) ? currentIndex++ : currentIndex = 0;
-    updateSlide();
-});
+    slides.forEach((slide, index) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'pagination-btn';
+        btn.setAttribute('aria-label', `Slide ${index + 1}`);
 
-preBtn.addEventListener('click', () => {
-    (currentIndex > 0) ? currentIndex-- : currentIndex = totalSides - 1;
-    updateSlide();
-});
+        if (index === 0) {
+            btn.classList.add('active');
+        }
 
-function startSlide() {
-    sliderInterval = setInterval(() => {
-        (currentIndex < totalSides - 1) ? currentIndex++ : currentIndex = 0;
-        updateSlide();
-    }, 3000);
-}
+        paginationContainer.appendChild(btn);
 
-function stopSlide() {
-    clearInterval(sliderInterval);
-}
-
-// pagination button js
-
-function showPaginationBtn() {
-    let paginationContainerElm = document.querySelector('.pagination-btns');
-
-    slides.forEach(() => {
-        let div = document.createElement('div');
-        div.classList.add('pagination-btn');
-        paginationContainerElm.appendChild(div);
-    });
-}
-
-function setPaginationBrColor() {
-    let paginationBtns = document.querySelectorAll('.pagination-btn');
-    paginationBtns.forEach((paginationBtn) => {
-        paginationBtn.classList.remove('active');
-    });
-    paginationBtns[currentIndex].classList.add('active')
-}
-
-function setupPaginationEvents() {
-    let paginationBtns = document.querySelectorAll('.pagination-btn');
-    paginationBtns.forEach((btn, index) => {
-        btn.addEventListener('mouseenter', stopSlide);
-        btn.addEventListener('mouseleave', startSlide);
         btn.addEventListener('click', () => {
             currentIndex = index;
             updateSlide();
+            startSlide();
         });
     });
 
+    const paginationBtns =
+        paginationContainer.querySelectorAll('.pagination-btn');
+
+    function updateSlide() {
+        slider.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
+
+        paginationBtns.forEach((btn, index) => {
+            btn.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function startSlide() {
+        stopSlide();
+
+        if (slides.length > 1) {
+            sliderInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide();
+            }, 3000);
+        }
+    }
+
+    function stopSlide() {
+        if (sliderInterval !== null) {
+            clearInterval(sliderInterval);
+            sliderInterval = null;
+        }
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide();
+        });
+    }
+
+    if (preBtn) {
+        preBtn.addEventListener('click', () => {
+            currentIndex =
+                (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide();
+        });
+    }
+
+    [slider, nextBtn, preBtn].forEach(element => {
+        if (!element) return;
+
+        element.addEventListener('mouseenter', stopSlide);
+        element.addEventListener('mouseleave', startSlide);
+    });
+
+    startSlide();
 }
+
+/* ================= END SLIDER ================= */
+
 
 function setupSliderHoverEvents() {
     const sliderControls = [slider, preBtn, nextBtn];
@@ -181,47 +195,34 @@ const closeContactModal =
     document.getElementById("closeContactModal");
 
 
-// Open Modal
+/* ================= CONTACT MODAL ================= */
 
-openContactModal.addEventListener("click", function() {
-    contactModal.classList.add("active");
-
-});
-
-
-// Close Modal
-
-closeContactModal.addEventListener("click", function() {
-
-    contactModal.classList.remove("active");
-
-});
-
-
-// Close when clicking outside
-
-contactModal.addEventListener("click", function(e) {
-
-    if (e.target === contactModal) {
-
-        contactModal.classList.remove("active");
-
+if (contactModal) {
+    if (openContactModal) {
+        openContactModal.addEventListener('click', () => {
+            contactModal.classList.add('active');
+        });
     }
 
-});
-
-
-// Close with ESC
-
-document.addEventListener("keydown", function(e) {
-
-    if (e.key === "Escape") {
-
-        contactModal.classList.remove("active");
-
+    if (closeContactModal) {
+        closeContactModal.addEventListener('click', () => {
+            contactModal.classList.remove('active');
+        });
     }
 
-});
+    contactModal.addEventListener('click', (event) => {
+        if (event.target === contactModal) {
+            contactModal.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            contactModal.classList.remove('active');
+        }
+    });
+}
+
 
 // end of contact form js
 
@@ -261,6 +262,65 @@ document.addEventListener('click', (event) => {
 
         menuDropdown.classList.remove('active');
 
+    }
+
+});
+
+/* Student Search */
+
+document.getElementById("studentSearch").addEventListener("keyup", function() {
+
+    let search = this.value.toLowerCase();
+
+    document.querySelectorAll(".student-row").forEach(function(row) {
+
+        let name = row.getAttribute("data-name").toLowerCase();
+
+        if (name.includes(search)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+
+    });
+
+});
+
+
+/* Student Detail */
+
+function showStudent(name, roll, percentage) {
+
+    document.getElementById("studentName").innerText = name;
+    document.getElementById("studentRoll").innerText = roll;
+    document.getElementById("studentPercentage").innerText = percentage;
+
+    let initials = name
+        .split(" ")
+        .map(word => word.charAt(0))
+        .join("")
+        .substring(0, 2);
+
+    document.getElementById("profileAvatar").innerText = initials;
+
+    document.getElementById("studentModal").classList.add("show");
+
+}
+
+
+function closeStudent() {
+
+    document.getElementById("studentModal").classList.remove("show");
+
+}
+
+
+/* Close when click outside */
+
+document.getElementById("studentModal").addEventListener("click", function(e) {
+
+    if (e.target === this) {
+        closeStudent();
     }
 
 });

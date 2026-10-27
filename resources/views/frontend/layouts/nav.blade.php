@@ -3,7 +3,7 @@
       <div class="header-container">
 
           <div class="school-logo">
-              <a href="index.html">
+              <a href="{{route('frontend.dashboard')}}">
                   <img src="../images/logo.jpeg" alt="विद्यालय लोगो">
               </a>
           </div>
