@@ -4607,7 +4607,7 @@ footer {
 }
 
 .sticky-topper-text {
-    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-family: "Noto Sans Devanagari", sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.7;
@@ -4952,130 +4952,11 @@ footer {
     }
 }
 
-.nav-container {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 2px;
-}
-
-.nav-container a {
-    position: relative;
-    height: 88px;
-    padding: 0 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    color: #334155;
-    text-decoration: none;
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: 900;
-    transition: color 0.25s ease;
-}
-
-.nav-container a:hover,
-.nav-container a.active {
-    color: #1261a0;
-}
-
-.nav-container a::after {
-    content: "";
-    position: absolute;
-    left: 15%;
-    bottom: 0;
-    width: 70%;
-    height: 3px;
-    background: #f59e0b;
-    border-radius: 3px 3px 0 0;
-    transform: scaleX(0);
-    transition: transform 0.25s ease;
-}
-
-.nav-container a:hover::after,
-.nav-container a.active::after {
-    transform: scaleX(1);
-}
-
-.nav-container .material-symbols-outlined {
-    font-size: 18px;
-    flex-shrink: 0;
-}
-
 
 /* MENU BUTTON */
 
-.menu-btn {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    color: #ffffff;
-    background: #123c69;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.25s ease;
-}
-
-.menu-btn:hover {
-    background: #1976d2;
-}
-
-.menu-btn .material-symbols-outlined {
-    font-size: 27px;
-}
-
 
 /* MOBILE DROPDOWN */
-
-.menu-dropdown {
-    display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 3%;
-    width: 280px;
-    max-width: 94vw;
-    max-height: calc(100vh - 110px);
-    overflow-y: auto;
-    padding: 10px;
-    background: #ffffff;
-    border: 1px solid #e5edf6;
-    border-radius: 12px;
-    box-shadow: 0 12px 32px rgba(18, 60, 105, 0.16);
-}
-
-.menu-dropdown.active {
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-dropdown a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-    color: #334155;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-.menu-dropdown a:hover,
-.menu-dropdown a.active {
-    color: #1261a0;
-    background: #eff6ff;
-}
-
-.menu-dropdown .material-symbols-outlined {
-    font-size: 21px;
-}
 
 
 /* Laravel Template - Global Link Fix */
@@ -5504,151 +5385,626 @@ a:focus {
 }
 
 
-/* ===================================
-   ATTENDANCE FILTER SECTION
-=================================== */
+/* =====================================================
+   STUDENT ATTENDANCE FILTER — CLEANED
+   Bootstrap 5 grid + form controls
+===================================================== */
 
+.attendance-container .attendance-filter-card,
 .attendance-filter-card {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-    gap: 20px;
+    display: block;
     width: 100%;
+    margin: 0 0 24px;
     padding: 24px;
-    margin: 30px 0;
     background: #ffffff;
-    border: 1px solid #e5eaf0;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     box-sizing: border-box;
 }
 
-.attendance-filter-card .filter-group {
-    flex: 0 1 220px;
-    min-width: 0;
-    width: auto;
+
+/* Bootstrap row should control the filter layout */
+
+.attendance-filter-card>.row {
+    align-items: end;
+    margin-top: 0;
 }
 
+
+/* Labels */
+
+.attendance-container .attendance-filter-card .form-label,
+.attendance-filter-card .form-label,
 .attendance-filter-card .filter-group label {
     display: block;
-    margin-bottom: 8px;
-    color: #344054;
+    margin: 0 0 8px;
+    color: #123c69;
     font-size: 14px;
     font-weight: 600;
 }
 
 
-/* Dropdown */
+/* Class and month dropdowns */
 
-.attendance-filter-card .filter-group select.form-select {
+.attendance-container .attendance-filter-card select,
+.attendance-filter-card .form-select,
+.attendance-filter-card select {
     display: block;
     width: 100%;
-    height: 44px;
-    padding: 8px 36px 8px 12px;
-    color: #243447;
+    min-width: 0;
+    min-height: 48px;
+    padding: 10px 38px 10px 14px;
+    color: #334155;
     background-color: #ffffff;
-    border: 1px solid #dbe2ea;
-    border-radius: 7px;
+    border: 1px solid #dbe3ed;
+    border-radius: 8px;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.5;
     box-shadow: none;
-    box-sizing: border-box;
     cursor: pointer;
 }
 
-.attendance-filter-card .filter-group select.form-select:focus {
-    border-color: #2563eb;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+.attendance-container .attendance-filter-card select:focus,
+.attendance-filter-card .form-select:focus,
+.attendance-filter-card select:focus {
+    border-color: #1261a0;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(18, 97, 160, 0.12);
 }
 
 
-/* Search Box */
+/* Student search */
 
+.attendance-container .attendance-filter-card .search-box,
 .attendance-filter-card .search-box {
     display: flex;
-    flex: 1 1 300px;
     align-items: stretch;
+    width: 100%;
     min-width: 0;
-    height: 44px;
+    min-height: 48px;
+    height: 48px;
     padding: 0;
     background: #ffffff;
-    border: 1px solid #dbe2ea;
-    border-radius: 7px;
+    border: 1px solid #dbe3ed;
+    border-radius: 8px;
     overflow: hidden;
     box-sizing: border-box;
 }
 
+.attendance-container .attendance-filter-card .search-box:focus-within,
 .attendance-filter-card .search-box:focus-within {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    border-color: #1261a0;
+    box-shadow: 0 0 0 3px rgba(18, 97, 160, 0.12);
 }
 
-.attendance-filter-card .search-box .input-group-text {
+.attendance-container .attendance-filter-card .input-group-text,
+.attendance-filter-card .input-group-text {
     display: flex;
     align-items: center;
-    padding: 0 12px;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-height: 46px;
+    padding: 0 14px;
     color: #64748b;
     background: #ffffff;
-    border: none;
+    border: 0;
+    border-right: 0;
+    border-radius: 0;
 }
 
-.attendance-filter-card .search-box .form-control {
+.attendance-filter-card .input-group-text .material-symbols-outlined {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.attendance-container .attendance-filter-card .search-box input,
+.attendance-filter-card .search-box .form-control,
+.attendance-filter-card .search-box input {
     flex: 1 1 auto;
     width: 1%;
     min-width: 0;
-    height: 42px;
-    padding: 0 12px 0 0;
-    color: #243447;
+    min-height: 46px;
+    height: 46px;
+    padding: 0 14px 0 0;
+    color: #334155;
     background: #ffffff;
-    border: none;
+    border: 0;
     border-radius: 0;
-    outline: none;
+    outline: 0;
     box-shadow: none;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 15px;
 }
 
-.attendance-filter-card .search-box .form-control:focus {
-    border: none;
-    outline: none;
+.attendance-container .attendance-filter-card .search-box input:focus,
+.attendance-filter-card .search-box .form-control:focus,
+.attendance-filter-card .search-box input:focus {
+    border: 0;
+    outline: 0;
     box-shadow: none;
 }
 
+.attendance-filter-card .search-box input::placeholder,
 .attendance-filter-card .search-box .form-control::placeholder {
     color: #94a3b8;
     opacity: 1;
 }
 
 
+/* Keep older filter markup compatible */
+
+.attendance-container .attendance-filter-card .filter-group {
+    min-width: 0;
+    width: 100%;
+}
+
+
 /* Tablet */
 
-@media (max-width: 1024px) {
+@media (max-width: 767.98px) {
+    .attendance-container .attendance-filter-card,
     .attendance-filter-card {
-        flex-wrap: wrap;
-        gap: 16px;
+        padding: 16px;
     }
-    .attendance-filter-card .filter-group {
-        flex: 1 1 200px;
+    .attendance-filter-card>.row {
+        row-gap: 16px;
     }
+    .attendance-container .attendance-filter-card .search-box,
     .attendance-filter-card .search-box {
-        flex: 1 1 260px;
+        min-height: 46px;
+        height: 46px;
+    }
+    .attendance-container .attendance-filter-card .input-group-text,
+    .attendance-container .attendance-filter-card .search-box input,
+    .attendance-filter-card .input-group-text,
+    .attendance-filter-card .search-box input,
+    .attendance-filter-card .search-box .form-control {
+        min-height: 44px;
+        height: 44px;
     }
 }
 
 
-/* Mobile */
+/* Notification show page  */
+
+.notice-show-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.notice-show-breadcrumb a {
+    color: #1261a0;
+    text-decoration: none;
+}
+
+.notice-show-breadcrumb a:hover {
+    color: #f59e0b;
+}
+
+.notice-show-breadcrumb .material-symbols-outlined {
+    font-size: 18px;
+}
+
+
+/* Detail Card */
+
+.notice-show-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px rgba(18, 60, 105, 0.06);
+}
+
+
+/* Notice Title Area */
+
+.notice-show-card-header {
+    padding: 25px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.notice-show-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    color: #1261a0;
+    border-radius: 10px;
+}
+
+.notice-show-icon .material-symbols-outlined {
+    font-size: 32px;
+}
+
+.notice-show-title-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.notice-show-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.notice-show-date .material-symbols-outlined {
+    font-size: 17px;
+}
+
+.notice-show-title-area h2 {
+    color: #123c69;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.7;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+
+/* Notice Content */
+
+.notice-show-content {
+    padding: 18px 7%;
+}
+
+.notice-show-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #fff7e6;
+    color: #9a5b00;
+    border: 1px solid #fde2a7;
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.notice-show-badge .material-symbols-outlined {
+    font-size: 19px;
+}
+
+.notice-show-section {
+    margin-bottom: 30px;
+}
+
+.notice-show-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #123c69;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 13px;
+    margin: 0 0 18px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.notice-show-section h3 .material-symbols-outlined {
+    color: #1261a0;
+    font-size: 25px;
+}
+
+.notice-show-section p {
+    color: #475569;
+    font-size: 15px;
+    line-height: 2;
+    text-align: justify;
+    margin: 0 0 15px;
+}
+
+
+/* Information Box */
+
+.notice-show-info {
+    padding: 20px;
+    background: #f1f7fd;
+    border-left: 4px solid #1261a0;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.notice-show-info h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #123c69;
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.notice-show-info h4 .material-symbols-outlined {
+    font-size: 22px;
+}
+
+.notice-show-info p {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+
+/* Instructions */
+
+.notice-show-instructions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notice-show-instructions li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 0;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.9;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.notice-show-instructions li:last-child {
+    border-bottom: none;
+}
+
+.notice-show-instructions .material-symbols-outlined {
+    color: #16a34a;
+    font-size: 21px;
+    margin-top: 3px;
+}
+
+
+/* PDF Attachment */
+
+.notice-show-attachment {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.notice-show-pdf-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dc2626;
+    background: #fef2f2;
+    border-radius: 8px;
+}
+
+.notice-show-pdf-icon .material-symbols-outlined {
+    font-size: 29px;
+}
+
+.notice-show-file-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.notice-show-file-details h4 {
+    color: #123c69;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 5px;
+    overflow-wrap: anywhere;
+}
+
+.notice-show-file-details p {
+    color: #64748b;
+    font-size: 12px;
+    margin: 0;
+}
+
+.notice-show-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 15px;
+    color: #ffffff;
+    background: #123c69;
+    border: 1px solid #123c69;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.notice-show-download:hover {
+    background: #1261a0;
+    border-color: #1261a0;
+}
+
+.notice-show-download .material-symbols-outlined {
+    font-size: 19px;
+}
+
+
+/* Bottom Buttons */
+
+.notice-show-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.notice-show-back,
+.notice-show-print {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.notice-show-back {
+    color: #ffffff;
+    background: #123c69;
+    border: 1px solid #123c69;
+}
+
+.notice-show-back:hover {
+    background: #1261a0;
+    border-color: #1261a0;
+}
+
+.notice-show-print {
+    color: #123c69;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+
+.notice-show-print:hover {
+    background: #eff6ff;
+    border-color: #1261a0;
+}
+
+.notice-show-back .material-symbols-outlined,
+.notice-show-print .material-symbols-outlined {
+    font-size: 20px;
+}
+
+
+/* Responsive */
 
 @media (max-width: 768px) {
-    .attendance-filter-card {
+    .notice-show-page {
+        padding: 28px 15px 45px;
+    }
+    .notice-show-card-header {
+        padding: 22px;
+    }
+    .notice-show-title-area h2 {
+        font-size: 21px;
+    }
+    .notice-show-content {
+        padding: 24px 22px;
+    }
+    .notice-show-section h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .notice-show-page {
+        padding: 22px 12px 35px;
+    }
+    .notice-show-breadcrumb {
+        gap: 5px;
+        font-size: 12px;
+    }
+    .notice-show-card-header {
+        gap: 13px;
+        padding: 18px 15px;
+    }
+    .notice-show-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+    .notice-show-icon .material-symbols-outlined {
+        font-size: 26px;
+    }
+    .notice-show-title-area h2 {
+        font-size: 18px;
+    }
+    .notice-show-date {
+        font-size: 12px;
+    }
+    .notice-show-content {
+        padding: 20px 15px;
+    }
+    .notice-show-section h3 {
+        font-size: 17px;
+    }
+    .notice-show-section p {
+        font-size: 14px;
+        text-align: left;
+    }
+    .notice-show-info {
+        padding: 15px;
+    }
+    .notice-show-instructions li {
+        font-size: 14px;
+    }
+    .notice-show-attachment {
+        flex-wrap: wrap;
+        padding: 14px;
+    }
+    .notice-show-file-details {
+        flex-basis: calc(100% - 65px);
+    }
+    .notice-show-download {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .notice-show-actions {
         flex-direction: column;
         align-items: stretch;
-        gap: 16px;
-        padding: 18px;
     }
-    .attendance-filter-card .filter-group,
-    .attendance-filter-card .search-box {
-        flex: none;
+    .notice-show-back,
+    .notice-show-print {
         width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* Print */
+
+@media print {
+    .notice-show-page {
+        background: #ffffff;
+        padding: 0;
+    }
+    .notice-show-breadcrumb,
+    .notice-show-actions,
+    .notice-show-download {
+        display: none !important;
+    }
+    .notice-show-card {
+        box-shadow: none;
     }
 }
