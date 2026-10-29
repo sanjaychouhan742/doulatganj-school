@@ -268,23 +268,21 @@ document.addEventListener('click', (event) => {
 
 /* Student Search */
 
-document.getElementById("studentSearch").addEventListener("keyup", function() {
+const studentSearch = document.getElementById("studentSearch");
 
-    let search = this.value.toLowerCase();
+if (studentSearch) {
+    studentSearch.addEventListener("input", function() {
+        const search = this.value.toLowerCase().trim();
 
-    document.querySelectorAll(".student-row").forEach(function(row) {
+        document.querySelectorAll(".student-row").forEach(row => {
+            const name = (
+                row.getAttribute("data-name") || ""
+            ).toLowerCase();
 
-        let name = row.getAttribute("data-name").toLowerCase();
-
-        if (name.includes(search)) {
-            row.style.display = "";
-        } else {
-            row.style.display = "none";
-        }
-
+            row.style.display = name.includes(search) ? "" : "none";
+        });
     });
-
-});
+}
 
 
 /* Student Detail */
@@ -308,19 +306,66 @@ function showStudent(name, roll, percentage) {
 }
 
 
-function closeStudent() {
+const studentModal = document.getElementById("studentModal");
 
-    document.getElementById("studentModal").classList.remove("show");
-
+if (studentModal) {
+    studentModal.addEventListener("click", function(e) {
+        if (e.target === this) {
+            closeStudent();
+        }
+    });
 }
 
 
-/* Close when click outside */
+/* ================= TOPPER STUDENTS ================= */
 
-document.getElementById("studentModal").addEventListener("click", function(e) {
+let currentClass = "class8";
 
-    if (e.target === this) {
-        closeStudent();
+function showClass(classId, clickedButton) {
+    const activePanel = document.getElementById(classId);
+
+    // Check whether the selected class exists
+    if (!activePanel) {
+        console.error("Class panel not found:", classId);
+        return;
     }
 
-});
+    currentClass = classId;
+
+    document.querySelectorAll(".result-panel").forEach(panel => {
+        panel.classList.remove("active");
+    });
+
+    document.querySelectorAll(".class-tab").forEach(button => {
+        button.classList.remove("active");
+    });
+
+    activePanel.classList.add("active");
+
+    if (clickedButton) {
+        clickedButton.classList.add("active");
+    }
+
+    changeSession();
+}
+
+function changeSession() {
+    const sessionSelect = document.getElementById("academicSession");
+    const activePanel = document.getElementById(currentClass);
+
+    if (!sessionSelect || !activePanel) {
+        return;
+    }
+
+    const sessionText = activePanel.querySelector(
+        ".result-heading span"
+    );
+
+    if (sessionText) {
+        sessionText.textContent =
+            "शैक्षणिक सत्र: " +
+            sessionSelect.value.replace("-", "–");
+    }
+}
+
+/* ================= END TOPPER STUDENTS ================= */
