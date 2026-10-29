@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', 'Dashboard |')
+@section('title')
 @section('content')
     <div class="notice-bar">
 
@@ -603,9 +603,9 @@
                 </div>
 
                 <!-- <a href="notification/index.html" class="home-notice-all-btn">
-                                        सभी सूचनाएँ
-                                        <span class="material-symbols-outlined">arrow_forward</span>
-                                    </a> -->
+                                                सभी सूचनाएँ
+                                                <span class="material-symbols-outlined">arrow_forward</span>
+                                            </a> -->
 
             </div>
 
@@ -759,17 +759,17 @@
             <!-- Bottom Link -->
             <!-- <div class="home-notice-footer">
 
-                                    <span class="material-symbols-outlined">info</span>
+                                            <span class="material-symbols-outlined">info</span>
 
-                                    <p>
-                                        सभी नवीनतम घोषणाओं के लिए विद्यालय का सूचना पटल देखें।
-                                    </p>
+                                            <p>
+                                                सभी नवीनतम घोषणाओं के लिए विद्यालय का सूचना पटल देखें।
+                                            </p>
 
-                                    <a href="notification/index.html">
-                                        सभी नोटिस देखें
-                                    </a>
+                                            <a href="notification/index.html">
+                                                सभी नोटिस देखें
+                                            </a>
 
-                                </div> -->
+                                        </div> -->
 
         </div>
 
@@ -815,7 +815,7 @@
                             विभिन्न कक्षाओं के लिए डिजिटल पुस्तकें एवं अध्ययन सामग्री।
                         </p>
 
-                        <a href="e-library/index.html">
+                        <a href="{{ route('frontend.e-library') }}">
                             देखें
                             <span class="material-symbols-outlined">
                                 arrow_forward
@@ -844,7 +844,7 @@
                             पुराने प्रश्न-पत्र एवं मॉडल पेपर विद्यार्थियों के लिए उपलब्ध।
                         </p>
 
-                        <a href="e-library/index.html">
+                        <a href="{{ route('frontend.e-library') }}">
                             देखें
                             <span class="material-symbols-outlined">
                                 arrow_forward
@@ -873,7 +873,7 @@
                             कक्षा 1 से 12 तक की उपयोगी शैक्षणिक सामग्री एवं नोट्स।
                         </p>
 
-                        <a href="e-library/index.html">
+                        <a href="{{ route('frontend.e-library') }}">
                             देखें
                             <span class="material-symbols-outlined">
                                 arrow_forward
@@ -890,7 +890,7 @@
 
             <div class="home-elibrary-button">
 
-                <a href="e-library/index.html">
+                <a href="{{ route('frontend.e-library') }}">
                     पूरी ई-लाइब्रेरी देखें
 
                     <span class="material-symbols-outlined">
@@ -1032,26 +1032,26 @@
 
                 <!-- <div class="contact-card">
 
-                                        <span class="material-symbols-outlined">
-                                            school
-                                        </span>
+                                                <span class="material-symbols-outlined">
+                                                    school
+                                                </span>
 
-                                        <h3>
-                                            विद्यालय से जुड़ी जानकारी
-                                        </h3>
+                                                <h3>
+                                                    विद्यालय से जुड़ी जानकारी
+                                                </h3>
 
-                                        <p>
-                                            प्रवेश, समय-सारणी, सूचनाएँ, गतिविधियाँ एवं अन्य विद्यालय संबंधी जानकारी के लिए वेबसाइट के संबंधित अनुभाग देखें।
-                                        </p>
+                                                <p>
+                                                    प्रवेश, समय-सारणी, सूचनाएँ, गतिविधियाँ एवं अन्य विद्यालय संबंधी जानकारी के लिए वेबसाइट के संबंधित अनुभाग देखें।
+                                                </p>
 
-                                        <a href="#">
-                                            और जानकारी
-                                            <span class="material-symbols-outlined">
-                                                arrow_forward
-                                            </span>
-                                        </a>
+                                                <a href="#">
+                                                    और जानकारी
+                                                    <span class="material-symbols-outlined">
+                                                        arrow_forward
+                                                    </span>
+                                                </a>
 
-                                    </div> -->
+                                            </div> -->
                 <!-- Google Map -->
 
                 <div class="map-card">

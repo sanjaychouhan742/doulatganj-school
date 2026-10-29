@@ -6008,3 +6008,421 @@ a:focus {
         box-shadow: none;
     }
 }
+
+
+/* ================= BOOK SHOW PAGE ================= */
+
+.book-show-heading {
+    background: linear-gradient(120deg, #103f35, #176b50);
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.book-heading-inner {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.book-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #d8eee3;
+}
+
+.book-breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.book-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.book-breadcrumb .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.book-heading-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.13);
+    font-size: 13px;
+}
+
+.book-show-heading h1 {
+    margin: 15px 0 8px;
+    font-size: 32px;
+}
+
+.book-show-heading p {
+    margin: 0;
+    color: #e0eee8;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+.book-show-section {
+    background: #f5f7f6;
+    padding: 35px 20px 55px;
+}
+
+.book-show-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ================= BOOK DETAILS ================= */
+
+.book-info-card {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 22px;
+    padding: 25px;
+    margin-bottom: 28px;
+    background: #fff;
+    border: 1px solid #e3eae6;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(22, 59, 44, 0.04);
+}
+
+.book-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 92px;
+    flex-shrink: 0;
+    color: #176b50;
+    background: #e5f3eb;
+    border-radius: 10px;
+}
+
+.book-info-icon .material-symbols-outlined {
+    font-size: 42px;
+}
+
+.book-info-content {
+    flex: 1;
+    min-width: 220px;
+}
+
+.book-info-tag {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 5px;
+    color: #176b50;
+    background: #e5f3eb;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.book-info-content h2 {
+    margin: 10px 0;
+    color: #18392e;
+    font-size: 23px;
+}
+
+.book-info-content>p {
+    margin: 0;
+    color: #66736c;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.book-meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 22px;
+}
+
+.book-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.book-meta-item>.material-symbols-outlined {
+    color: #176b50;
+    font-size: 25px;
+}
+
+.book-meta-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.book-meta-item small {
+    color: #7a857f;
+    font-size: 12px;
+}
+
+.book-meta-item strong {
+    color: #263d32;
+    font-size: 14px;
+}
+
+.book-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px 15px;
+    border: 1px solid #d7e4dc;
+    border-radius: 7px;
+    color: #176b50;
+    background: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.book-back-btn:hover {
+    color: #fff;
+    background: #176b50;
+    border-color: #176b50;
+}
+
+
+/* ================= PDF READER ================= */
+
+.book-reader-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e0e8e3;
+    border-radius: 14px;
+    box-shadow: 0 5px 22px rgba(22, 59, 44, 0.05);
+}
+
+.book-reader-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e8eeea;
+}
+
+.book-reader-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.book-reader-title>.material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 9px;
+    color: #176b50;
+    background: #e5f3eb;
+    font-size: 27px;
+}
+
+.book-reader-title h2 {
+    margin: 0 0 5px;
+    color: #193b2e;
+    font-size: 19px;
+}
+
+.book-reader-title p {
+    margin: 0;
+    color: #7a857f;
+    font-size: 12px;
+}
+
+.book-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    border-radius: 7px;
+    color: #ffbf24;
+    border: 2px solid #ffbf24;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.book-download-btn:hover {
+    background: #ffbf24;
+    color: #fff;
+}
+
+.book-reader-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 22px;
+    background: #f9fbfa;
+    border-bottom: 1px solid #e8eeea;
+}
+
+.reader-status,
+.reader-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+}
+
+.reader-status {
+    color: #637168;
+}
+
+.reader-status .material-symbols-outlined {
+    color: #176b50;
+}
+
+.reader-open-btn {
+    color: #ffbf24;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.reader-open-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= PDF VIEWER ================= */
+
+.book-pdf-frame {
+    width: 100%;
+    height: 750px;
+    background: #e8ece9;
+}
+
+.book-pdf-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.book-reader-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 22px;
+    background: #f7faf8;
+    border-top: 1px solid #e8eeea;
+}
+
+.book-reader-note>.material-symbols-outlined {
+    color: #176b50;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.book-reader-note p {
+    margin: 0;
+    color: #66736c;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.book-reader-note a {
+    color: #ffbf24;
+    font-weight: 700;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .book-show-heading {
+        padding: 30px 16px;
+    }
+    .book-show-heading h1 {
+        font-size: 25px;
+    }
+    .book-show-section {
+        padding: 22px 12px 35px;
+    }
+    .book-info-card {
+        padding: 18px;
+        gap: 15px;
+    }
+    .book-info-icon {
+        width: 60px;
+        height: 70px;
+    }
+    .book-info-icon .material-symbols-outlined {
+        font-size: 34px;
+    }
+    .book-info-content {
+        min-width: 0;
+        width: 100%;
+    }
+    .book-info-content h2 {
+        font-size: 20px;
+    }
+    .book-meta-list {
+        gap: 16px;
+    }
+    .book-back-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .book-reader-header {
+        padding: 16px;
+    }
+    .book-download-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .book-reader-toolbar {
+        padding: 12px 15px;
+    }
+    .book-pdf-frame {
+        height: 560px;
+    }
+    .book-reader-note {
+        padding: 13px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-show-heading h1 {
+        font-size: 22px;
+    }
+    .book-breadcrumb {
+        font-size: 12px;
+        gap: 4px;
+    }
+    .book-info-content h2 {
+        font-size: 18px;
+    }
+    .book-meta-list {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .book-reader-title h2 {
+        font-size: 17px;
+    }
+    .book-pdf-frame {
+        height: 480px;
+    }
+}
