@@ -603,9 +603,9 @@
                 </div>
 
                 <!-- <a href="notification/index.html" class="home-notice-all-btn">
-                                                सभी सूचनाएँ
-                                                <span class="material-symbols-outlined">arrow_forward</span>
-                                            </a> -->
+                                                    सभी सूचनाएँ
+                                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                                </a> -->
 
             </div>
 
@@ -759,17 +759,17 @@
             <!-- Bottom Link -->
             <!-- <div class="home-notice-footer">
 
-                                            <span class="material-symbols-outlined">info</span>
+                                                <span class="material-symbols-outlined">info</span>
 
-                                            <p>
-                                                सभी नवीनतम घोषणाओं के लिए विद्यालय का सूचना पटल देखें।
-                                            </p>
+                                                <p>
+                                                    सभी नवीनतम घोषणाओं के लिए विद्यालय का सूचना पटल देखें।
+                                                </p>
 
-                                            <a href="notification/index.html">
-                                                सभी नोटिस देखें
-                                            </a>
+                                                <a href="notification/index.html">
+                                                    सभी नोटिस देखें
+                                                </a>
 
-                                        </div> -->
+                                            </div> -->
 
         </div>
 
@@ -942,7 +942,7 @@
 
             <div class="center-btn">
 
-                <a href="gallery/index.html" class="gallery-btn">
+                <a href="{{ route('frontend.galleries') }}" class="gallery-btn">
                     पूरी गैलरी देखें
                     <span class="material-symbols-outlined">
                         arrow_forward
@@ -1032,26 +1032,26 @@
 
                 <!-- <div class="contact-card">
 
-                                                <span class="material-symbols-outlined">
-                                                    school
-                                                </span>
-
-                                                <h3>
-                                                    विद्यालय से जुड़ी जानकारी
-                                                </h3>
-
-                                                <p>
-                                                    प्रवेश, समय-सारणी, सूचनाएँ, गतिविधियाँ एवं अन्य विद्यालय संबंधी जानकारी के लिए वेबसाइट के संबंधित अनुभाग देखें।
-                                                </p>
-
-                                                <a href="#">
-                                                    और जानकारी
                                                     <span class="material-symbols-outlined">
-                                                        arrow_forward
+                                                        school
                                                     </span>
-                                                </a>
 
-                                            </div> -->
+                                                    <h3>
+                                                        विद्यालय से जुड़ी जानकारी
+                                                    </h3>
+
+                                                    <p>
+                                                        प्रवेश, समय-सारणी, सूचनाएँ, गतिविधियाँ एवं अन्य विद्यालय संबंधी जानकारी के लिए वेबसाइट के संबंधित अनुभाग देखें।
+                                                    </p>
+
+                                                    <a href="#">
+                                                        और जानकारी
+                                                        <span class="material-symbols-outlined">
+                                                            arrow_forward
+                                                        </span>
+                                                    </a>
+
+                                                </div> -->
                 <!-- Google Map -->
 
                 <div class="map-card">

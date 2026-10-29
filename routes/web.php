@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\frontend\ELibraryController;
+use App\Http\Controllers\frontend\GalleryController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\NotificationController;
 use App\Http\Controllers\frontend\StudentAttendanceController;
@@ -20,3 +21,7 @@ Route::get('notification/show', [NotificationController::class, 'show'])->name('
 Route::get('e-library', [ELibraryController::class, 'indexClassWise'])->name('frontend.e-library');
 Route::get('e-library/index', [ELibraryController::class, 'index'])->name('frontend.e-library.index');
 Route::get('e-library/show', [ELibraryController::class, 'show'])->name('frontend.e-library.show');
+
+// gallery routes
+Route::get('galleries', [GalleryController::class, 'index'])->name('frontend.galleries');
+Route::get('gallery/show', [GalleryController::class, 'show'])->name('frontend.gallery.show');
