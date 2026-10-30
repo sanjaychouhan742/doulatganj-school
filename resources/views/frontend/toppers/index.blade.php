@@ -71,7 +71,8 @@
                         <tbody>
                             <tr>
                                 <td><span class="rank-number rank-first">1</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="आरव शर्मा" class="student-photo">
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="आरव शर्मा"
+                                        class="student-photo">
                                 </td>
                                 <td class="student-name">आरव शर्मा</td>
                                 <td>475</td>
@@ -80,7 +81,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number rank-second">2</span></td>
-                                <td><img src="../images/students-images/student2.jpg" alt="अनन्या वर्मा"
+                                <td><img src="{{ asset('images/students-images/student2.jpg') }}" alt="अनन्या वर्मा"
                                         class="student-photo"></td>
                                 <td class="student-name">अनन्या वर्मा</td>
                                 <td>468</td>
@@ -89,7 +90,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number rank-third">3</span></td>
-                                <td><img src="../images/students-images/student3.jpg" alt="विवान पटेल"
+                                <td><img src="{{ asset('images/students-images/student3.jpg') }}" alt="विवान पटेल"
                                         class="student-photo"></td>
                                 <td class="student-name">विवान पटेल</td>
                                 <td>460</td>
@@ -98,7 +99,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number">4</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="सिया चौहान"
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="सिया चौहान"
                                         class="student-photo"></td>
                                 <td class="student-name">सिया चौहान</td>
                                 <td>452</td>
@@ -107,7 +108,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number">5</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="अर्जुन सिंह"
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="अर्जुन सिंह"
                                         class="student-photo"></td>
                                 <td class="student-name">अर्जुन सिंह</td>
                                 <td>445</td>
@@ -116,7 +117,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number">6</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="काव्या यादव"
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="काव्या यादव"
                                         class="student-photo"></td>
                                 <td class="student-name">काव्या यादव</td>
                                 <td>438</td>
@@ -125,7 +126,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number">7</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="अद्विक जैन"
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="अद्विक जैन"
                                         class="student-photo"></td>
                                 <td class="student-name">अद्विक जैन</td>
                                 <td>430</td>
@@ -134,7 +135,8 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number">8</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="परी मीणा" class="student-photo">
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="परी मीणा"
+                                        class="student-photo">
                                 </td>
                                 <td class="student-name">परी मीणा</td>
                                 <td>425</td>
@@ -143,7 +145,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number">9</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="दक्ष अहिरवार"
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="दक्ष अहिरवार"
                                         class="student-photo"></td>
                                 <td class="student-name">दक्ष अहिरवार</td>
                                 <td>418</td>
@@ -152,7 +154,7 @@
                             </tr>
                             <tr>
                                 <td><span class="rank-number">10</span></td>
-                                <td><img src="../images/students-images/student1.jpg" alt="रिद्धि मालवीय"
+                                <td><img src="{{ asset('images/students-images/student1.jpg') }}" alt="रिद्धि मालवीय"
                                         class="student-photo"></td>
                                 <td class="student-name">रिद्धि मालवीय</td>
                                 <td>410</td>
